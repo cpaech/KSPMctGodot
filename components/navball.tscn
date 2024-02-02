@@ -33,6 +33,7 @@ size = 3.0
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.408798)
+rotation_order = 4
 material_override = SubResource("StandardMaterial3D_fviun")
 gi_mode = 0
 radius = 1.0
