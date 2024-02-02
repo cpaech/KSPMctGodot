@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://byiklfxqgfl7x"]
+[gd_scene load_steps=7 format=3 uid="uid://byiklfxqgfl7x"]
 
 [ext_resource type="Texture2D" uid="uid://dshk00hhp5ers" path="res://components/navball/navball.png" id="1_nltgs"]
 [ext_resource type="Script" path="res://components/navball/navball_ball.cs" id="2_sjd7s"]
+[ext_resource type="Texture2D" uid="uid://btjes1u5361as" path="res://components/navball/prograde_marker.svg" id="3_5rbp7"]
 [ext_resource type="Texture2D" uid="uid://bqxs4wn7w5sfg" path="res://components/navball/navball.svg" id="3_wyrtk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fviun"]
@@ -31,8 +32,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.74925)
 projection = 1
 size = 3.0
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.408798)
+[node name="CSGSphere3D" type="CSGSphere3D" parent="SubViewportContainer/SubViewport" node_paths=PackedStringArray("prograde_marker")]
 rotation_order = 4
 material_override = SubResource("StandardMaterial3D_fviun")
 gi_mode = 0
@@ -40,9 +40,16 @@ radius = 1.0
 radial_segments = 48
 rings = 24
 script = ExtResource("2_sjd7s")
+prograde_marker = NodePath("../Sprite3D")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_k0yv4")
+
+[node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport"]
+offset = Vector2(0, 23.89)
+pixel_size = 0.002
+texture = ExtResource("3_5rbp7")
+region_rect = Rect2(-2.22, 1.64, 0, 0)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 2
