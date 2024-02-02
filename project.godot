@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Connection="*res://Test.cs"
+KrpcManager="*res://KRPCManager.cs"
 
 [dotnet]
 
