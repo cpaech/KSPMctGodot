@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://6ilh0mn65qc1"]
+
+[ext_resource type="Script" path="res://components/FlightDataView.cs" id="1_olmtl"]
+
+[node name="FlightData" type="PanelContainer"]
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 2
+columns = 2
+script = ExtResource("1_olmtl")
+
+[node name="AltLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Altitude"
+
+[node name="AltData" type="Label" parent="GridContainer"]
+layout_mode = 2
+
+[node name="LatLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Latitude"
+
+[node name="LatData" type="Label" parent="GridContainer"]
+layout_mode = 2
+
+[node name="LongLabel" type="Label" parent="GridContainer"]
+layout_mode = 2
+text = "Longtitude"
+
+[node name="LongData" type="Label" parent="GridContainer"]
+layout_mode = 2

@@ -10,12 +10,12 @@ public partial class navball_ball : CsgSphere3D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-    	kRPC = (KRPCManager) GetNode("/root/KrpcManager");
+		kRPC = (KRPCManager) GetNode("/root/KrpcManager");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		RotationDegrees = new Vector3(kRPC.currentVessel.Flight().Pitch, -1 * kRPC.currentVessel.Flight().Heading + 180, kRPC.currentVessel.Flight().Roll);
+		RotationDegrees = new Vector3(kRPC.pitchStream.Get(), -1 * kRPC.headingStream.Get() + 180, kRPC.rollStream.Get());
 	}
 }

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://njmg2adlv71t"]
+[gd_scene load_steps=3 format=3 uid="uid://njmg2adlv71t"]
 
 [ext_resource type="PackedScene" uid="uid://byiklfxqgfl7x" path="res://components/navball.tscn" id="2_ii58r"]
+[ext_resource type="PackedScene" uid="uid://6ilh0mn65qc1" path="res://components/flightData.tscn" id="2_ml7qj"]
 
 [node name="MainView" type="Control"]
 layout_mode = 3
@@ -12,3 +13,11 @@ grow_vertical = 2
 
 [node name="navball" parent="." instance=ExtResource("2_ii58r")]
 layout_mode = 0
+
+[node name="FlightData" parent="." instance=ExtResource("2_ml7qj")]
+layout_mode = 0
+offset_left = 325.0
+offset_top = 44.0
+offset_right = 414.0
+offset_bottom = 121.0
+scale = Vector2(3, 3)
