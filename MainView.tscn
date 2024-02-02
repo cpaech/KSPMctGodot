@@ -1,8 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://os0uakuhnnwv"]
+[gd_scene load_steps=6 format=3 uid="uid://os0uakuhnnwv"]
 
 [ext_resource type="Script" path="res://Test.cs" id="1_ucjpv"]
+[ext_resource type="Texture2D" uid="uid://dshk00hhp5ers" path="res://images/navball.png" id="2_u7461"]
+[ext_resource type="Texture2D" uid="uid://bqxs4wn7w5sfg" path="res://images/navball.svg" id="3_8b75n"]
 
-[sub_resource type="Environment" id="Environment_err3l"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fviun"]
+shading_mode = 0
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+albedo_texture = ExtResource("2_u7461")
+
+[sub_resource type="Environment" id="Environment_k0yv4"]
 
 [node name="MainView" type="Control"]
 layout_mode = 3
@@ -13,28 +22,36 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ucjpv")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="Navball" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_right = 341.0
-offset_bottom = 341.0
+offset_right = 288.0
+offset_bottom = 288.0
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="PanelContainer"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Navball"]
 layout_mode = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="PanelContainer/SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="Navball/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(341, 341)
+size = Vector2i(288, 288)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="PanelContainer/SubViewportContainer/SubViewport"]
+[node name="Camera3D" type="Camera3D" parent="Navball/SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.74925)
+projection = 1
+size = 3.0
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="PanelContainer/SubViewportContainer/SubViewport"]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Navball/SubViewportContainer/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.408798)
-radius = 2.859
-radial_segments = 24
-rings = 12
+material_override = SubResource("StandardMaterial3D_fviun")
+radius = 1.0
+radial_segments = 48
+rings = 24
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="PanelContainer/SubViewportContainer/SubViewport"]
-environment = SubResource("Environment_err3l")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Navball/SubViewportContainer/SubViewport"]
+environment = SubResource("Environment_k0yv4")
+
+[node name="TextureRect" type="TextureRect" parent="Navball"]
+layout_mode = 2
+texture = ExtResource("3_8b75n")
+expand_mode = 1
