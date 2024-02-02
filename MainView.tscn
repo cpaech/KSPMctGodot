@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://os0uakuhnnwv"]
+[gd_scene load_steps=3 format=3 uid="uid://dssbwq4goqsit"]
 
-[ext_resource type="Script" path="res://Test.cs" id="1_ucjpv"]
+[ext_resource type="Script" path="res://testLabel.gd" id="1_s2hbu"]
 
 [sub_resource type="Environment" id="Environment_err3l"]
 
@@ -11,7 +11,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ucjpv")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -38,3 +37,9 @@ rings = 12
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="PanelContainer/SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_err3l")
+
+[node name="test" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("1_s2hbu")
