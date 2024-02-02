@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dshk00hhp5ers"
-path.s3tc="res://.godot/imported/navball.png-dc7bd86c4aea5ce852f2bb7da7004ac9.s3tc.ctex"
+path.s3tc="res://.godot/imported/navball.png-10be8f32f86d57df4968eb16dcac3467.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://images/navball.png"
-dest_files=["res://.godot/imported/navball.png-dc7bd86c4aea5ce852f2bb7da7004ac9.s3tc.ctex"]
+source_file="res://components/navball/navball.png"
+dest_files=["res://.godot/imported/navball.png-10be8f32f86d57df4968eb16dcac3467.s3tc.ctex"]
 
 [params]
 

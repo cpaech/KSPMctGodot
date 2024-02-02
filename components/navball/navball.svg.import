@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqxs4wn7w5sfg"
-path="res://.godot/imported/navball.svg-2791af797c3837f5c91f71eabda3c7a1.ctex"
+path="res://.godot/imported/navball.svg-400909af046ab62551c007ae4f4e785f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/navball.svg"
-dest_files=["res://.godot/imported/navball.svg-2791af797c3837f5c91f71eabda3c7a1.ctex"]
+source_file="res://components/navball/navball.svg"
+dest_files=["res://.godot/imported/navball.svg-400909af046ab62551c007ae4f4e785f.ctex"]
 
 [params]
 
