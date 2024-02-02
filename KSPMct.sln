@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KSPMct", "KSPMct.csproj", "{40825ECD-D835-4A8F-8BCE-9AE29688BAFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40825ECD-D835-4A8F-8BCE-9AE29688BAFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40825ECD-D835-4A8F-8BCE-9AE29688BAFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40825ECD-D835-4A8F-8BCE-9AE29688BAFA}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{40825ECD-D835-4A8F-8BCE-9AE29688BAFA}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{40825ECD-D835-4A8F-8BCE-9AE29688BAFA}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{40825ECD-D835-4A8F-8BCE-9AE29688BAFA}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal
