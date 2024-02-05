@@ -3,29 +3,45 @@
 [ext_resource type="Script" path="res://components/FlightDataView.cs" id="1_olmtl"]
 
 [node name="FlightData" type="PanelContainer"]
+offset_right = 326.52
+offset_bottom = 300.0
 
-[node name="GridContainer" type="GridContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="ScrollContainer"]
+layout_mode = 2
+ratio = 0.9091
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/AspectRatioContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/AspectRatioContainer/MarginContainer"]
 layout_mode = 2
 columns = 2
 script = ExtResource("1_olmtl")
 
-[node name="AltLabel" type="Label" parent="GridContainer"]
+[node name="AltLabel" type="Label" parent="ScrollContainer/AspectRatioContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 text = "Altitude"
 
-[node name="AltData" type="Label" parent="GridContainer"]
+[node name="AltData" type="Label" parent="ScrollContainer/AspectRatioContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 
-[node name="LatLabel" type="Label" parent="GridContainer"]
+[node name="LatLabel" type="Label" parent="ScrollContainer/AspectRatioContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 text = "Latitude"
 
-[node name="LatData" type="Label" parent="GridContainer"]
+[node name="LatData" type="Label" parent="ScrollContainer/AspectRatioContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 
-[node name="LongLabel" type="Label" parent="GridContainer"]
+[node name="LongLabel" type="Label" parent="ScrollContainer/AspectRatioContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 text = "Longtitude"
 
-[node name="LongData" type="Label" parent="GridContainer"]
+[node name="LongData" type="Label" parent="ScrollContainer/AspectRatioContainer/MarginContainer/GridContainer"]
 layout_mode = 2

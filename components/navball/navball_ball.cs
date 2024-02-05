@@ -19,9 +19,8 @@ public partial class navball_ball : CsgSphere3D
 	public override void _Process(double delta)
 	{
 		//TODO disable Markers when under Ball
-		//TODO make a single Flight Stream
-		var flight = kRPC.flightStream.Get();
-		RotationDegrees = new Vector3(flight.Pitch, -1 * flight.Heading + 180, flight.Roll);
+		// Turns out that for some random reason it is faster to use seperate streams for pitch, heading, roll but not for other flight data? Why tho?
+		RotationDegrees = new Vector3(kRPC.pitchStream.Get(), -1 * kRPC.headingStream.Get() + 180, kRPC.rollStream.Get());
 		var prograde = kRPC.currentVessel.Flight(kRPC.currentVessel.ReferenceFrame ).Prograde;
 		prograde_marker.Position = (new Vector3((float)prograde.Item1, (float)prograde.Item2, (float)prograde.Item3) * 1.1f).Rotated(new Vector3(1, 0, 0), 0.5f * (float)Math.PI) ;
 	}

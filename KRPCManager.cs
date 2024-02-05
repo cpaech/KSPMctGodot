@@ -13,12 +13,14 @@ public partial class KRPCManager : Godot.Node
 	public KRPC.Client.Services.SpaceCenter.Service spaceCenter;
 	public KRPC.Client.Services.SpaceCenter.Vessel currentVessel;
 	public Stream<Flight> flightStream;
+	public Stream<float> pitchStream;
+	public Stream<float> headingStream;
+	public Stream<float> rollStream;
 
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-
 		krpcConnection = new Connection(
 				   name: "My Example Program",
 				   address: IPAddress.Parse(ip),
@@ -28,6 +30,9 @@ public partial class KRPCManager : Godot.Node
 		currentVessel = spaceCenter.ActiveVessel;
 		var flight = currentVessel.Flight();
 		flightStream = krpcConnection.AddStream(() => currentVessel.Flight(null));
+		pitchStream = krpcConnection.AddStream(() => flight.Pitch);
+		headingStream = krpcConnection.AddStream(() => flight.Heading);
+		rollStream = krpcConnection.AddStream(() => flight.Roll);
 	}
 
 
