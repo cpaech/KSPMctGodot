@@ -11,6 +11,7 @@ specular_mode = 2
 disable_ambient_light = true
 disable_fog = true
 albedo_texture = ExtResource("1_nltgs")
+texture_filter = 5
 
 [sub_resource type="Environment" id="Environment_k0yv4"]
 
@@ -32,7 +33,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.74925)
 projection = 1
 size = 3.0
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="SubViewportContainer/SubViewport" node_paths=PackedStringArray("prograde_marker")]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="SubViewportContainer/SubViewport"]
 rotation_order = 4
 material_override = SubResource("StandardMaterial3D_fviun")
 gi_mode = 0
@@ -40,7 +41,8 @@ radius = 1.0
 radial_segments = 48
 rings = 24
 script = ExtResource("2_sjd7s")
-prograde_marker = NodePath("../Sprite3D")
+prograde_marker = Object(Sprite3D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","transform":Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0),"rotation_edit_mode":0,"rotation_order":2,"top_level":false,"visible":true,"visibility_parent":NodePath(""),"layers":1,"sorting_offset":0.0,"sorting_use_aabb_center":true,"material_override":null,"material_overlay":null,"transparency":0.0,"cast_shadow":1,"extra_cull_margin":0.0,"custom_aabb":AABB(0, 0, 0, 0, 0, 0),"lod_bias":1.0,"ignore_occlusion_culling":false,"gi_mode":1,"gi_lightmap_scale":0,"visibility_range_begin":0.0,"visibility_range_begin_margin":0.0,"visibility_range_end":0.0,"visibility_range_end_margin":0.0,"visibility_range_fade_mode":0,"centered":true,"offset":Vector2(0, 23.89),"flip_h":false,"flip_v":false,"modulate":Color(1, 1, 1, 1),"pixel_size":0.002,"axis":2,"billboard":0,"transparent":true,"shaded":false,"double_sided":true,"no_depth_test":false,"fixed_size":false,"alpha_cut":0,"alpha_scissor_threshold":0.5,"alpha_hash_scale":1.0,"alpha_antialiasing_mode":0,"alpha_antialiasing_edge":0.0,"texture_filter":3,"render_priority":0,"texture":ExtResource("3_5rbp7"),"hframes":1,"vframes":1,"frame":0,"region_enabled":false,"region_rect":Rect2(-2.22, 1.64, 0, 0),"script":null)
+
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_k0yv4")
