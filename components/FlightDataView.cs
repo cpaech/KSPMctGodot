@@ -24,9 +24,10 @@ public partial class FlightDataView : GridContainer
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		altLabel.Text = kRPC.altStream.Get().ToString();
-		latLabel.Text = kRPC.latStream.Get().ToString();
-		longLabel.Text = kRPC.longStream.Get().ToString();
+		var flight = kRPC.flightStream.Get();
+		altLabel.Text = flight.SurfaceAltitude.ToString();
+		latLabel.Text = flight.Latitude.ToString();
+		longLabel.Text = flight.Longitude.ToString();
 
 	}
 }
