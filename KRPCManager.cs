@@ -16,7 +16,8 @@ public partial class KRPCManager : Godot.Node
 	public Stream<float> pitchStream;
 	public Stream<float> headingStream;
 	public Stream<float> rollStream;
-
+	public Stream<Orbit> orbitStream;
+	public Stream<double> orbitalVelocityStream;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -33,6 +34,8 @@ public partial class KRPCManager : Godot.Node
 		pitchStream = krpcConnection.AddStream(() => flight.Pitch);
 		headingStream = krpcConnection.AddStream(() => flight.Heading);
 		rollStream = krpcConnection.AddStream(() => flight.Roll);
+		orbitStream = krpcConnection.AddStream(() => currentVessel.Orbit);
+		orbitalVelocityStream = krpcConnection.AddStream(() => currentVessel.Flight(currentVessel.Orbit.Body.NonRotatingReferenceFrame).Speed);
 	}
 
 

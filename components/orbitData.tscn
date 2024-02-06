@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://deyvkhn4dwlps"]
+
+[ext_resource type="Script" path="res://components/OrbitData.cs" id="1_k56aj"]
+[ext_resource type="Theme" uid="uid://bl87y4mwyag1o" path="res://styling/theme.tres" id="2_y7ub6"]
+
+[node name="OrbitData" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="ScrollContainer"]
+layout_mode = 2
+ratio = 0.9091
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/AspectRatioContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/AspectRatioContainer/MarginContainer"]
+layout_mode = 2
+script = ExtResource("1_k56aj")
+
+[node name="Label" type="Label" parent="ScrollContainer/AspectRatioContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+theme = ExtResource("2_y7ub6")
+theme_override_font_sizes/font_size = 20
+text = "O R B I T"
