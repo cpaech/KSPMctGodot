@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://6ilh0mn65qc1"]
+[gd_scene load_steps=3 format=3 uid="uid://6ilh0mn65qc1"]
 
+[ext_resource type="Theme" uid="uid://bl87y4mwyag1o" path="res://styling/theme.tres" id="1_5rsau"]
 [ext_resource type="Script" path="res://components/FlightDataView.cs" id="1_olmtl"]
 
 [node name="FlightData" type="PanelContainer"]
-offset_right = 326.52
-offset_bottom = 300.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5rsau")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2
@@ -22,26 +27,9 @@ theme_override_constants/margin_bottom = 10
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer/AspectRatioContainer/MarginContainer"]
 layout_mode = 2
-columns = 2
 script = ExtResource("1_olmtl")
 
-[node name="AltLabel" type="Label" parent="ScrollContainer/AspectRatioContainer/MarginContainer/GridContainer"]
+[node name="title" type="Label" parent="ScrollContainer/AspectRatioContainer/MarginContainer/GridContainer"]
 layout_mode = 2
-text = "Altitude"
-
-[node name="AltData" type="Label" parent="ScrollContainer/AspectRatioContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-
-[node name="LatLabel" type="Label" parent="ScrollContainer/AspectRatioContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-text = "Latitude"
-
-[node name="LatData" type="Label" parent="ScrollContainer/AspectRatioContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-
-[node name="LongLabel" type="Label" parent="ScrollContainer/AspectRatioContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-text = "Longtitude"
-
-[node name="LongData" type="Label" parent="ScrollContainer/AspectRatioContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "F L I G H T"

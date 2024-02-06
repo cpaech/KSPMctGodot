@@ -29,7 +29,7 @@ public partial class KRPCManager : Godot.Node
 		spaceCenter = krpcConnection.SpaceCenter();
 		currentVessel = spaceCenter.ActiveVessel;
 		var flight = currentVessel.Flight();
-		flightStream = krpcConnection.AddStream(() => currentVessel.Flight(null));
+		flightStream = krpcConnection.AddStream(() => currentVessel.Flight(currentVessel.Orbit.Body.ReferenceFrame));
 		pitchStream = krpcConnection.AddStream(() => flight.Pitch);
 		headingStream = krpcConnection.AddStream(() => flight.Heading);
 		rollStream = krpcConnection.AddStream(() => flight.Roll);
