@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 KrpcManager="*res://KRPCManager.cs"
 
+[display]
+
+window/size/resizable=false
+
 [dotnet]
 
 project/assembly_name="KSPMct"

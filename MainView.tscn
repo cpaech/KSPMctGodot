@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://njmg2adlv71t"]
+[gd_scene load_steps=5 format=3 uid="uid://njmg2adlv71t"]
 
+[ext_resource type="Theme" uid="uid://bl87y4mwyag1o" path="res://styling/theme.tres" id="1_p7wfs"]
 [ext_resource type="PackedScene" uid="uid://byiklfxqgfl7x" path="res://components/navball.tscn" id="2_ii58r"]
 [ext_resource type="PackedScene" uid="uid://6ilh0mn65qc1" path="res://components/flightData.tscn" id="2_ml7qj"]
+[ext_resource type="PackedScene" uid="uid://deyvkhn4dwlps" path="res://components/orbitData.tscn" id="3_kv25l"]
 
 [node name="MainView" type="Control"]
 layout_mode = 3
@@ -10,14 +12,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_p7wfs")
 
 [node name="navball" parent="." instance=ExtResource("2_ii58r")]
 layout_mode = 0
 
 [node name="FlightData" parent="." instance=ExtResource("2_ml7qj")]
 layout_mode = 0
-offset_left = 325.0
-offset_top = 44.0
-offset_right = 414.0
-offset_bottom = 121.0
-scale = Vector2(3, 3)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 310.0
+offset_top = 5.0
+offset_right = 1135.0
+offset_bottom = 303.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="OrbitData" parent="." instance=ExtResource("3_kv25l")]
+layout_mode = 1
+offset_left = 309.0
+offset_top = 316.0
+offset_right = -19.0
+offset_bottom = -21.0
